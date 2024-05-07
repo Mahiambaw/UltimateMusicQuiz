@@ -1,0 +1,95 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "question": "Which artist released the song 'Shape of You,' which became one of the best-selling digital singles of all time?",
+      "options": ["Sam Smith", "Kenya Grace", "Adele", "Ed Sheeran"],
+      "answer": 3,
+      "points": 10,
+      "smaple": { "song": "Shape of You", "artist": "Ed Sheeran" }
+    },
+    {
+      "id": 2,
+      "question": "Which artist released the song 'Levitating'?",
+      "options": ["Taylor Swift", "Ariana Grande", "Dua Lipa", "Selena Gomez"],
+      "answer": 2,
+      "points": 10,
+
+      "smaple": { "song": "Levitating", "artist": "Dua Lipa" }
+    },
+    {
+      "id": 3,
+      "question": "Who performed 'Speed Drive'?",
+      "options": ["Charli XCX", "Billie Eilish", "Libianca", "Lizzy McAlpine"],
+      "answer": 0,
+      "points": 10,
+      "smaple": { "song": "Speed Drive", "artist": "Charli XCX" }
+    },
+    {
+      "id": 4,
+      "question": "(It Goes Like) Nanana' was performed by?",
+      "options": ["Dua Lipa", "Fifty Fifty", "Peggy Gou", "Billie Eilish"],
+      "answer": 2,
+      "points": 10,
+      "smaple": { "song": "(It Goes Like) Nanana", "artist": "Peggy Gou" }
+    },
+    {
+      "id": 5,
+      "question": "Who performed the song 'Watermelon Sugar'?",
+      "options": [
+        "Harry Styles",
+        "Shawn Mendes",
+        "Ed Sheeran",
+        "Justin Timberlake"
+      ],
+      "answer": 0,
+      "points": 10,
+      "smaple": { "song": "Watermelon Sugar", "artist": "Harry Styles" }
+    },
+    {
+      "id": 6,
+      "questions": "Who sang 'Monaco'?",
+      "options": ["Charli XCX", "NewJeans", "Bad Bunny", "Jungkook"],
+      "answer": 2,
+      "points": 10,
+      "smaple": { "song": "Monaco", "artist": "Bad Bunny" }
+    },
+    {
+      "id": 7,
+      "question": "Which artist released the song 'Truth Hurts'?",
+      "options": ["Cardi B", "Ariana Grande", "Lizzo", "Beyoncé"],
+      "answer": 2,
+      "points": 10,
+      "smaple": { "song": "Truth Hurts", "artist": "Lizzo" }
+    },
+    {
+      "id": 8,
+      "question": "'Super Shy' was a hit for which artist?",
+      "options": ["Mitski", "Bailey Zimmerman", "NewJeans", "Kenya Grace"],
+      "answer": 2,
+      "points": 10,
+      "smaple": { "song": "Super Shy", "artist": "NewJeans" }
+    },
+    {
+      "id": 9,
+      "question": "Which artist released the song 'Rolling in the Deep,' which topped charts worldwide in 2011?",
+      "options": ["Adele", "Rihanna", "Katy Perry", "Taylor Swift"],
+      "answer": 0,
+      "points": 10,
+      "smaple": { "song": "Rolling in the Deep", "artist": "Adele" }
+    },
+    {
+      "id": 10,
+      "question": "Which artist released the song 'Uptown Funk,' featuring Bruno Mars, which became a huge hit in 2014?",
+      "options": [
+        "Mark Ronson",
+        "Pharrell Williams",
+        "Justin Timberlake",
+        "Ed Sheeran"
+      ],
+      "answer": 1,
+      "points": 10,
+      "smaple": { "song": "Uptown Funk", "artist": "Mark Ronson" }
+    }
+  ]
+}
