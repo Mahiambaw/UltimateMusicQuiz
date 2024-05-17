@@ -1,10 +1,18 @@
-function Options({ options }) {
-  console.log(options);
+function Options({ options, dispatch, answer, point }) {
+  console.log(answer, point);
+
+  const handleClcik = (index) => {
+    dispatch({
+      type: "selectedAnswer",
+      payload: index,
+    });
+  };
+
   return (
     <>
       <section>
-        {options.map((option) => (
-          <div key={option.artist}>
+        {options.map((option, index) => (
+          <div key={option.artist} onClick={() => handleClcik(index)}>
             <img src={option.image.url} alt={option.artist} />
             <p>{option.artist}</p>
           </div>
