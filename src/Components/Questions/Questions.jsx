@@ -7,6 +7,7 @@ const intialState = {
   triviaQuestions: [],
   status: "loading",
   index: 0,
+  dotIndex: 0,
   totalPoints: 0,
   answer: null,
   tallyAnswer: {
@@ -52,13 +53,17 @@ function reducer(state, action) {
             : state.tallyAnswer.wrongAnswer + 1,
         },
       };
+
+    case "selectedDot":
+      return {
+        ...state,
+        dotIndex: action.payload,
+      };
   }
 }
 function Questions() {
-  const [{ triviaQuestions, status, index, answer }, dispatch] = useReducer(
-    reducer,
-    intialState
-  );
+  const [{ triviaQuestions, status, index, answer, dotIndex }, dispatch] =
+    useReducer(reducer, intialState);
 
   useEffect(() => {
     const fetchDataAndDispatch = async () => {
@@ -105,6 +110,7 @@ function Questions() {
             dispatch={dispatch}
             status={status}
             answer={answer}
+            dotIndex={dotIndex}
           />
         </>
       )}

@@ -1,8 +1,9 @@
 // eslint-disable-next-line react/prop-types
 import Options from "../Options/Options";
 import Questions from "../Questions/Questions";
+import ShowDots from "../ShowDots/ShowDots";
 
-function ShowQuestion({ question, dispatch, answer }) {
+function ShowQuestion({ question, dispatch, answer, dotIndex }) {
   return (
     <>
       <section className="my-[100px]">
@@ -20,10 +21,16 @@ function ShowQuestion({ question, dispatch, answer }) {
           </div>
 
           <div>
+            <ShowDots
+              options={question.options}
+              dispatch={dispatch}
+              dotIndex={dotIndex}
+            />
             <Options
               options={question.options}
               dispatch={dispatch}
               answer={answer}
+              dotIndex={dotIndex}
             />
           </div>
         </div>

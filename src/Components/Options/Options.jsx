@@ -1,4 +1,4 @@
-function Options({ options, dispatch, answer, point }) {
+function Options({ options, dispatch, answer, point, dotIndex }) {
   console.log(answer, point);
 
   const handleClcik = (index) => {
@@ -10,9 +10,13 @@ function Options({ options, dispatch, answer, point }) {
 
   return (
     <>
-      <section className="flex gap-10 flex-col md:flex-row">
+      <section className="flex gap-10 flex-col item-center justify-center md:flex-row ">
         {options.map((option, index) => (
-          <div key={option.artist} onClick={() => handleClcik(index)}>
+          <div
+            className={`${dotIndex === index ? "block" : "hidden"}`}
+            key={option.artist}
+            onClick={() => handleClcik(index)}
+          >
             <div className="border border-white rounded-md w-[300px] h-[300px]  overflow-hidden m-[10px] md :w-[500px] md:h-[400px]">
               <img
                 className="w-full h-full object-cover object-center transform  transition-transform hover:scale-110"
