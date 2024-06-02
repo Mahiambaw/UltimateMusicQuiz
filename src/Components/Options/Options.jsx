@@ -3,18 +3,26 @@ function Options({ options, dispatch, answer, point }) {
 
   const handleClcik = (index) => {
     dispatch({
-      type: "selectedAnswer",
+      type: "slectedAnswer",
       payload: index,
     });
   };
 
   return (
     <>
-      <section>
+      <section className="flex gap-10 flex-col md:flex-row">
         {options.map((option, index) => (
           <div key={option.artist} onClick={() => handleClcik(index)}>
-            <img src={option.image.url} alt={option.artist} />
-            <p>{option.artist}</p>
+            <div className="border border-white rounded-md w-[300px] h-[300px]  overflow-hidden m-[10px] md :w-[500px] md:h-[400px]">
+              <img
+                className="w-full h-full object-cover object-center transform  transition-transform hover:scale-110"
+                src={option.image.url}
+                alt={option.artist}
+              />
+            </div>
+            <p className="text-white text-[25px] leading-6 tracking-wide mt-[20px]">
+              {option.artist}
+            </p>
           </div>
         ))}
       </section>

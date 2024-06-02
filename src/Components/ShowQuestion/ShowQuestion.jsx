@@ -5,14 +5,18 @@ import Questions from "../Questions/Questions";
 function ShowQuestion({ question, dispatch, answer }) {
   return (
     <>
-      <section className="bg-amber-800">
+      <section className="my-[100px]">
         <div>
-          <div>
-            <h1 className="text-emerald-300">{question.question.question}</h1>
-            <audio controls>
-              <source src={question.question.sample} type="audio/mpeg" />
-              Your browser does not support the audio element.
-            </audio>
+          <div className="mb-[120px]">
+            <h1 className="text-red-500  text-[36px] md:text-[46px] pb-[100px] text-center">
+              {question.question.question}
+            </h1>
+            <div className="flex  item-center justify-center ">
+              <audio controls>
+                <source src={question.question.sample} type="audio/mpeg" />
+                Your browser does not support the audio element.
+              </audio>
+            </div>
           </div>
 
           <div>

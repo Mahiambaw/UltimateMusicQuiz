@@ -47,7 +47,7 @@ function reducer(state, action) {
           correctquestions: isCorrect
             ? [...state.tallyAnswer.correctquestions, state.index]
             : state.tallyAnswer.correctquestions,
-          wrongAnswer: isCorrect
+          wrongAnswer: !isCorrect
             ? state.tallyAnswer.wrongAnswer
             : state.tallyAnswer.wrongAnswer + 1,
         },
