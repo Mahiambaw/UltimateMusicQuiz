@@ -1,6 +1,5 @@
-function Options({ options, dispatch, answer, point, dotIndex }) {
-  console.log(answer, point);
-
+function Options({ options, dispatch, answer, dotIndex }) {
+  console.log(answer);
   const handleClcik = (index) => {
     dispatch({
       type: "slectedAnswer",
@@ -13,7 +12,11 @@ function Options({ options, dispatch, answer, point, dotIndex }) {
       <section className="flex gap-10 flex-col item-center justify-center md:flex-row ">
         {options.map((option, index) => (
           <div
-            className={`${dotIndex === index ? "block" : "hidden"}`}
+            className={`${dotIndex === index ? "block" : "hidden"} ${
+              answer !== null
+                ? "cursor-not-allowed pointer-events-none opacity-50"
+                : "cursor-pointer"
+            }`}
             key={option.artist}
             onClick={() => handleClcik(index)}
           >

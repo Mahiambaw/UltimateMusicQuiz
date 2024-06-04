@@ -16,6 +16,7 @@ const intialState = {
     wrongQuestions: [],
     wrongAnswer: 0,
   },
+  isCorrect: false,
 };
 
 function reducer(state, action) {
@@ -31,12 +32,13 @@ function reducer(state, action) {
         ...state,
         totalPoints: state.totalPoints + action.payload,
       };
-    case "selectedAnswer":
+    case "slectedAnswer":
       const currentQuestion = state.triviaQuestions[state.index];
       const isCorrect = currentQuestion.answer === action.payload;
       return {
         ...state,
         answer: action.payload,
+        isCorrect: isCorrect,
         totalPoints: isCorrect
           ? state.totalPoints + currentQuestion.points
           : state.totalPoints,
@@ -51,6 +53,9 @@ function reducer(state, action) {
           wrongAnswer: !isCorrect
             ? state.tallyAnswer.wrongAnswer
             : state.tallyAnswer.wrongAnswer + 1,
+          wrongQuestions: !isCorrect
+            ? [...state.tallyAnswer.wrongQuestions, state.index]
+            : state.tallyAnswer.wrongAnswer,
         },
       };
 
