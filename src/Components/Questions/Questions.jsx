@@ -16,7 +16,7 @@ const intialState = {
     wrongQuestions: [],
     wrongAnswer: 0,
   },
-  isCorrect: true,
+  isCorrect: null,
 };
 
 function reducer(state, action) {

@@ -2,7 +2,6 @@
 import Options from "../Options/Options";
 import Questions from "../Questions/Questions";
 import ShowDots from "../ShowDots/ShowDots";
-import ResultButtons from "../ResultButtons/ResultButtons";
 
 function ShowQuestion({ question, dispatch, answer, dotIndex, isCorrect }) {
   return (
@@ -33,8 +32,8 @@ function ShowQuestion({ question, dispatch, answer, dotIndex, isCorrect }) {
               answer={answer}
               dotIndex={dotIndex}
               isCorrect={isCorrect}
+              correctAnswer={question.answer}
             />
-            <ResultButtons isCorrect={isCorrect} answer={answer} />
           </div>
         </div>
       </section>

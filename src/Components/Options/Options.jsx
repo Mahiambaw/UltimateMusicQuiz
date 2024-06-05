@@ -1,5 +1,14 @@
-function Options({ options, dispatch, answer, dotIndex, isCorrect }) {
-  let newAnswer = null;
+import ResultButtons from "../ResultButtons/ResultButtons";
+
+function Options({
+  options,
+  dispatch,
+  answer,
+  dotIndex,
+  isCorrect,
+  correctAnswer,
+}) {
+  console.log(correctAnswer);
   const handleClcik = (index) => {
     dispatch({
       type: "slectedAnswer",
@@ -9,7 +18,7 @@ function Options({ options, dispatch, answer, dotIndex, isCorrect }) {
 
   return (
     <>
-      <section className="flex gap-10 flex-col item-center justify-center md:flex-row mb-[60px] ">
+      <section className="flex gap-10 flex-col item-center justify-center md:flex-row  ">
         {options.map((option, index) => (
           <div
             className={`${dotIndex === index ? "block" : "hidden"} ${
@@ -22,15 +31,10 @@ function Options({ options, dispatch, answer, dotIndex, isCorrect }) {
           >
             <div
               className={`border border-white rounded-md w-[300px] h-[300px] overflow-hidden m-[10px] md:w-[500px] md:h-[400px] ${
-                isCorrect !== null &&
-                isCorrect &&
-                answer !== null &&
-                index === answer &&
-                "border-green-600"
+                correctAnswer === index && answer !== null && "border-green-600"
               } ${
-                index === answer &&
                 answer !== null &&
-                !isCorrect &&
+                correctAnswer !== index &&
                 "border-purple-600"
               }`}
             >
@@ -40,9 +44,18 @@ function Options({ options, dispatch, answer, dotIndex, isCorrect }) {
                 alt={option.artist}
               />
             </div>
-            <p className="text-white text-[25px] leading-6 tracking-wide mt-[20px]">
-              {option.artist}
-            </p>
+            <div className="mb-[30px]">
+              <p className="text-white text-[25px] leading-6 tracking-wide mb-[60px]">
+                {option.artist}
+              </p>
+            </div>
+
+            <ResultButtons
+              isCorrect={isCorrect}
+              answer={answer}
+              correctAnswer={correctAnswer}
+              index={index}
+            />
           </div>
         ))}
       </section>
