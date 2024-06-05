@@ -16,7 +16,7 @@ const intialState = {
     wrongQuestions: [],
     wrongAnswer: 0,
   },
-  isCorrect: false,
+  isCorrect: true,
 };
 
 function reducer(state, action) {
@@ -67,8 +67,10 @@ function reducer(state, action) {
   }
 }
 function Questions() {
-  const [{ triviaQuestions, status, index, answer, dotIndex }, dispatch] =
-    useReducer(reducer, intialState);
+  const [
+    { triviaQuestions, status, index, answer, dotIndex, isCorrect },
+    dispatch,
+  ] = useReducer(reducer, intialState);
 
   useEffect(() => {
     const fetchDataAndDispatch = async () => {
@@ -116,6 +118,7 @@ function Questions() {
             status={status}
             answer={answer}
             dotIndex={dotIndex}
+            isCorrect={isCorrect}
           />
         </>
       )}

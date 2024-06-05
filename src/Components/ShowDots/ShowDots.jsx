@@ -1,7 +1,5 @@
 function ShowDots({ options, dispatch, dotIndex }) {
-  console.log(dotIndex);
   const handleClick = (activeIndex) => {
-    console.log(activeIndex, dotIndex);
     dispatch({
       type: "selectedDot",
       payload: activeIndex,

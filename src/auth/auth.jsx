@@ -33,9 +33,10 @@ export const fetchData = async (artist, track) => {
   const searchQuery = track ? `track:${track}%20artist:${artist}` : artist;
   console.log(searchQuery);
 
-  const [trackPromise, artistPromise] = track
-    ? [fetchTrackData(searchQuery, searchParams), Promise.resolve({})]
-    : [fetchSongData(searchQuery, searchParams), Promise.resolve({})];
+  const [trackPromise, artistPromise] =
+    track !== null
+      ? [fetchTrackData(searchQuery, searchParams), Promise.resolve({})]
+      : [fetchSongData(searchQuery, searchParams), Promise.resolve({})];
 
   const [trackData, artistData] = await Promise.all([
     trackPromise,
