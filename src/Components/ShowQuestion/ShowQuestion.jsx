@@ -2,8 +2,16 @@
 import Options from "../Options/Options";
 import Questions from "../Questions/Questions";
 import ShowDots from "../ShowDots/ShowDots";
+import NextButton from "../Next/NextButton";
 
-function ShowQuestion({ question, dispatch, answer, dotIndex, isCorrect }) {
+function ShowQuestion({
+  question,
+  dispatch,
+  answer,
+  dotIndex,
+  isCorrect,
+  index,
+}) {
   return (
     <>
       <section className="my-[100px]">
@@ -13,7 +21,7 @@ function ShowQuestion({ question, dispatch, answer, dotIndex, isCorrect }) {
               {question.question.question}
             </h1>
             <div className="flex  item-center justify-center ">
-              <audio controls>
+              <audio key={question.question.sample} controls>
                 <source src={question.question.sample} type="audio/mpeg" />
                 Your browser does not support the audio element.
               </audio>
@@ -34,6 +42,7 @@ function ShowQuestion({ question, dispatch, answer, dotIndex, isCorrect }) {
               isCorrect={isCorrect}
               correctAnswer={question.answer}
             />
+            {answer !== null && <NextButton dispatch={dispatch} />}
           </div>
         </div>
       </section>

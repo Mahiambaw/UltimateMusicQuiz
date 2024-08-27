@@ -2,6 +2,7 @@ import { useEffect, useReducer } from "react";
 import jsonData from "../../../data/questions.json";
 import { fetchData } from "../../util/api";
 import ShowQuestion from "../ShowQuestion/ShowQuestion";
+import NextButton from "../Next/NextButton";
 
 const intialState = {
   triviaQuestions: [],
@@ -49,13 +50,13 @@ function reducer(state, action) {
             : state.tallyAnswer.correct,
           correctquestions: isCorrect
             ? [...state.tallyAnswer.correctquestions, state.index]
-            : state.tallyAnswer.correctquestions,
+            : [...state.tallyAnswer.correctquestions],
           wrongAnswer: !isCorrect
-            ? state.tallyAnswer.wrongAnswer
-            : state.tallyAnswer.wrongAnswer + 1,
+            ? state.tallyAnswer.wrongAnswer + 1
+            : state.tallyAnswer.wrongAnswer,
           wrongQuestions: !isCorrect
             ? [...state.tallyAnswer.wrongQuestions, state.index]
-            : state.tallyAnswer.wrongAnswer,
+            : [...state.tallyAnswer.wrongQuestions],
         },
       };
 
@@ -64,6 +65,15 @@ function reducer(state, action) {
         ...state,
         dotIndex: action.payload,
       };
+
+    case "nextQuestion":
+      return {
+        ...state,
+        index: state.index++,
+        answer: null,
+        isCorrect: null,
+        dotIndex: 0,
+      };
   }
 }
 function Questions() {
@@ -71,6 +81,7 @@ function Questions() {
     { triviaQuestions, status, index, answer, dotIndex, isCorrect },
     dispatch,
   ] = useReducer(reducer, intialState);
+  console.log(index, "this is the index");
 
   useEffect(() => {
     const fetchDataAndDispatch = async () => {
@@ -119,6 +130,7 @@ function Questions() {
             answer={answer}
             dotIndex={dotIndex}
             isCorrect={isCorrect}
+            index={index}
           />
         </>
       )}

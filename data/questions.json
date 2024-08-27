@@ -48,7 +48,7 @@
     },
     {
       "id": 6,
-      "questions": "Who sang 'Monaco'?",
+      "question": "Who sang 'Monaco'?",
       "options": ["Charli XCX", "NewJeans", "Bad Bunny", "Jungkook"],
       "answer": 2,
       "points": 10,
